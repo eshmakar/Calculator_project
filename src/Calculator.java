@@ -1,14 +1,16 @@
 import java.util.Scanner;
 
 public class Calculator {
-//первая версия - без пробелов писать, римские цифры еще не поддерживает, длина еще не ограничен... 07.05.2020
+//вторая версия - поддерживает пробелы (4 + 5), римские цифры еще не поддерживает, длина еще не ограничен... 13.05.2020
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Введите операцию:");
-            String s = scanner.next();
+            String s = scanner.nextLine();
+            s = s.replace(" ", "");
             int a = Integer.parseInt(s.substring(0, 1));
             int b = Integer.parseInt(s.substring(2, 3));
+
             String s2 = s.substring(1, 2);
             if (s2.contains("+"))
                 System.out.println(a + b);
